@@ -501,10 +501,11 @@ h2{
     margin-left: 20px;
   }
 
-  #menu-toggle input:checked ~ ul{
-    background: none;
-  }
-    
+  a:visited{ 
+    text-decoration: none; 
+    color: var(--black);
+}
+
   header h1 {
     grid-column-start: 1;
     grid-row-start: 2;
@@ -522,6 +523,7 @@ h2{
 
   #menu-toggle li.active a {
     background-color: var(--yellow);
+    
   }
 
   /* menu */
@@ -547,6 +549,7 @@ h2{
     background-color: var(--white);
     margin: 10px;
     font-size: 1rem;
+    color: var(--black);
   }
 
   ul{
