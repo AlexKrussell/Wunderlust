@@ -1,0 +1,767 @@
+/* ALEX KRUSSELL */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root{
+    --molle: "Molle", sans-serif; 
+    --monster: "Montserrat", sans-serif;   
+    --yellow: #f6d64a;
+    --teal: #55bcd5;
+    --purple: #9b26b0;
+    --blue: #499bd2;
+    --dark-gray: #222222;
+    --light-gray: #eaeaea;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+
+
+/* ----- SKIP LINK STYLES ----- */
+#skip{
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+#skip:focus{
+    position: static;
+    width: auto;
+    height: auto;
+}
+
+/* ----- STYLES ----- */
+
+body{
+  background-image: linear-gradient(var(--teal), var(--white));
+  background-size: 100% 250px;
+  background-repeat: no-repeat;
+}
+
+header{
+  display: grid;
+}
+
+header img{
+ width: 120px;
+ height: auto;
+ display: grid;
+ grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+header p{
+  line-height: 1.5;
+  padding-left: 30px;
+  padding-right: 30px;
+  grid-column-start: 1;
+  grid-row-start: 3;
+  grid-column-end: 3;
+}
+
+header h1{
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-column-end: 3;
+}
+
+/* ----- MENU STYLES ----- */
+nav{
+ display: grid;
+ grid-column-start: 2;
+ grid-column-end: 3;
+ grid-row-start: 1;
+}
+
+input#toggle{
+  display: none;
+}
+
+#menu-toggle{  
+  display: grid;  
+  height: 40px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+#menu-toggle img {
+  display: grid;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+#menu-toggle ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu-toggle a{
+    display: block;
+    text-decoration: none;
+    padding: 25px;
+}
+
+#menu-toggle label{
+    cursor: pointer;    
+} 
+
+/* Toggle Effect */
+
+ul{
+    overflow: hidden;
+    font-family: var(--monster);
+    font-weight: bold;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+
+/* Styles for menu when selected */
+#menu-toggle input:checked ~ ul{
+  height: 275px;
+  max-height: 1000px;
+  transition: all ease .5s;
+  background-color: var(--teal);
+  color: var(--black);
+  z-index: 999;
+  
+}
+
+#menu-toggle input:not(:checked) ~ label{
+  background-color: var(--yellow);
+  padding: 15px 75px 15px 75px;
+  margin-top: 10px;
+}
+
+#menu-toggle input:checked ~ label{
+  background-color: var(--black);
+  color: var(--white);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+li{
+    border-bottom: 2px solid var(--black);
+    text-decoration: none;
+}
+
+a:visited{ 
+    text-decoration: none; 
+    color: var(--black);
+}
+/* END NAV */
+
+
+.sr-only{
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#intro p,
+#intro h2{
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 1.8;
+}
+
+#img-grid {
+  display: flex;
+  flex-direction: column; 
+  padding-top: 10px;
+}
+
+#img-grid img {
+  width: 100%; 
+  height: auto;
+  margin-bottom: 10px; 
+}
+
+#plan {
+  background-color: var(--yellow); 
+  padding: 40px; 
+  text-align: center; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+#plan div section {
+  background-color: var(--teal); 
+  border: 2px solid var(--white); 
+  border-radius: 10px; 
+  padding: 20px; 
+  margin-bottom: 10px; 
+  text-align: center; 
+}
+
+#plan img {
+  display: block;
+  margin: 0 auto 10px; 
+}
+
+#plan h3{
+  color: var(--black); 
+  font-size: 2rem;
+  margin-top: 0; 
+  margin-bottom: 10px;
+}
+
+#plan h4{
+  color: var(--black); 
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 0; 
+  margin-bottom: 10px;
+}
+
+#testimonials {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+#testimonials div section {
+  text-align: center; 
+  margin-top: 15px;
+}
+
+#testimonials img {
+  display: block; 
+  margin: 0 auto; 
+}
+
+#testimonials h4,
+#testimonials h3,
+#testimonials p {
+  color: var(--black); 
+  margin-bottom: 10px;
+}
+
+#testimonials q{
+  font-style: italic;
+}
+
+#testimonials h4{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#testimonials h3{
+  font-size: 2rem;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+
+#about {
+  background-color: var(--blue); 
+  color: var(--black); 
+  padding-bottom: 20px;
+}
+
+.about-grid {
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); 
+}
+
+.about-item {
+  background-color: var(--blue); 
+  text-align: center; 
+  padding-top: 20px;
+}
+
+.about-item img {
+  width: 50px; 
+  height: 50px; 
+  display: block; 
+  margin: 0 auto; 
+}
+
+#about h3{
+  font-size: 2rem;
+  padding-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+#about h4{
+  font-size: 1rem;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#contact h3{
+  font-size: 2rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form-required{
+  font-size: .8rem;
+  font-family: var(--monster);
+}
+
+label{
+	margin-bottom: 0.5rem;
+	font-weight: bold;
+}
+
+input, select{
+	width: 100%;
+	margin-bottom: 1.5rem;
+	padding: 1.5rem;
+	height: 1rem;
+}
+
+fieldset{
+	display: flex;
+	flex-direction: column;
+}
+
+.required{
+  color: var(--purple);
+}
+
+#destination,
+#travelTime{
+  border: 2px solid var(--purple);
+  background-color: var(--white); 
+}
+
+input[type=text],
+input[type=email],
+input[type=tel]{
+  border: 2px solid var(--purple);
+  background-color: var(--white); 
+}
+
+legend{
+	font-weight: bold;
+}
+
+fieldset label, 
+fieldset input{
+	display: inline-block;
+	margin-bottom: 10px;
+	color: var(--black);
+	font-weight: normal;
+}
+
+.radio-input {
+  display: inline-block; 
+  vertical-align: middle; 
+  margin-right: 5px; 
+}
+
+input[type='radio'] {
+  accent-color: var(--purple);
+  width: 40px;
+  height: 40px; 
+}
+
+#mySubmit{
+	display: inline-block;
+	color: var(--white);
+	font-weight: bold;
+  text-align: center;
+	background-color: var(--purple);
+	border: none;
+  padding-bottom: 35px;
+	text-transform: uppercase;
+  font-family: var(--monster);
+	font-size: 1.2rem;
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-decoration: none;
+  padding-bottom: 10px;
+  background-color: var(--light-gray);
+}
+
+footer p{
+  margin: 10px;
+}
+
+footer a{
+  margin: 10px;
+  text-decoration: none;
+  font-family: var(--monster);
+}
+
+h1, h2, h3{
+    font-family: var(--molle);
+}
+
+h4, p, q, small, nav, button, form{
+    font-family: var(--monster);
+}
+
+h1{
+    font-size: 2.5em;
+}
+
+h2{
+    font-size: 2em;
+}
+
+
+
+  /* ----- MEDIUM SCREEN STYLES 600PX ----- */
+@media screen and (min-width: 600px){
+  header {
+    display: grid;
+  }
+
+  header img{
+    width: 200px;
+    height: auto;
+    order: 1;
+  }
+
+  nav {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    margin-bottom: 50px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  #menu-toggle input:checked ~ ul{
+    background: none;
+  }
+    
+  header h1 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+
+  p {
+    grid-column-start: 1;
+    grid-row-start: 3;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #menu-toggle li.active a {
+    background-color: var(--yellow);
+  }
+
+  /* menu */
+  #menu-toggle label {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+  }
+
+  #menu-toggle{
+    display: flex;
+    
+  }
+
+  #menu-toggle li{
+    border: none;
+  }
+
+  #menu-toggle li a {
+    background-color: var(--white);
+    margin: 10px;
+    font-size: 1rem;
+  }
+
+  ul{
+    overflow: visible;
+  }
+  
+  /* intro + images */
+  #intro h2, 
+  #intro p{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  #img-grid {
+    display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 30px;
+  }
+
+  #img-grid img {
+    width: 100%;
+  
+  }
+
+  picture{
+    grid-column: 1/-1;
+  }
+
+
+  /* plan section */
+  #plan div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  /* testimonials */
+  #testimonials div {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    justify-content: center; 
+  }
+
+  /* about section */
+  #about {
+    text-align: center;
+  }
+
+  .about-grid {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    justify-content: center; 
+  }
+
+  #mySubmit{
+    width: 200px;
+    float: right;
+  }
+
+  footer{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    padding: 20px;
+  }
+
+}
+ 
+  /* ----- LARGE SCREEN STYLES 1100PX ----- */
+  @media screen and (min-width: 1100px){
+    /* menu section */
+    header {
+      display: inline-grid;
+     
+    }
+  
+    header img{
+      width: 300px;
+      grid-column-start: 1;
+      grid-row-start: 1;
+    }
+
+    #logo{
+      display: grid;
+      margin-right: auto;
+    }
+
+    header h1 {
+      grid-column-start: 2;
+      grid-row-start: 1;
+      margin-top: 50px;
+      padding: 0;
+    }
+
+    header p {
+      grid-column-start: 2;
+      grid-row-start: 1;
+      margin-top: 100px;
+      padding: 0;
+    }
+
+    nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0;
+    }
+
+    nav ul{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #menu-toggle li.active a {
+      background-color: var(--yellow);
+    }
+
+    #menu-toggle li a{
+      padding: 10px;
+      margin: 0;
+      margin-left: 10px;
+      color: var(--black);
+    }
+
+    #intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-start: 1;
+    
+    }
+    
+    #intro h2{
+      grid-column-start: 1;
+      grid-row-start: 1;
+    }
+    #intro p {
+      grid-column-start: 1;
+      grid-row-start: 1;
+      width: 100%; 
+      margin-top: 50px;
+    }
+    
+    #img-grid {
+      grid-column-start: 2;
+    }
+
+    /* plan section */
+    #plan{
+      display: block;
+      text-align: left;
+    }
+  
+    #plan div {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    /* testimonials */
+    #testimonials{
+      display: block;
+      text-align: left;
+      padding-bottom: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+
+    #testimonials div {
+      display: grid; 
+      grid-template-columns: 1fr 1fr 1fr 1fr; 
+      justify-content: center; 
+    }
+
+    #about {
+      display: block;
+      text-align: left;
+      padding: 40px;
+    }
+
+    #contact {
+      display: block;
+      text-align: left;
+      padding: 40px;
+    }
+
+    #contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 20px; 
+    }
+  
+    footer{
+      display: block;
+      text-align: left;
+      padding: 20px;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .footer-links a {
+        margin-left: 20px; 
+    }
+
+    .footer-content p {
+      order: 1; 
+    }
+
+    .footer-content .footer-links {
+      order: 2; 
+    }
+
+  }
+  
